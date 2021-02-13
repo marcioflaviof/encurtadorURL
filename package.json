@@ -27,7 +27,6 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "watch": "tsc -w",
-    "dev": "nodemon dist/server.js",
-    "devtwo": "nodemon --exec ts-node src/server.ts"
+    "dev": "nodemon dist/server.js"
   }
 }
