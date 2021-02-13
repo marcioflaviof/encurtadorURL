@@ -4,12 +4,15 @@ module.exports = {
   entities: ["dist/entity/**/*.js"],
   migrations: ["dist/migration/**/*.js"],
   subscribers: ["dist/subscriber/**/*.js"],
+  ssl: "true",
   cli: {
     entitiesDir: "src/entity",
     migrationsDir: "src/migration",
     subscribersDir: "src/subscriber",
   },
   extra: {
-    ssl: "true",
+    ssl: {
+      rejectUnauthorized: false,
+    },
   },
 };
