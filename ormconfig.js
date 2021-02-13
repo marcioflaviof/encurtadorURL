@@ -5,6 +5,7 @@ module.exports = {
   migrations: ["dist/migration/**/*.js"],
   subscribers: ["dist/subscriber/**/*.js"],
   ssl: "true",
+  synchronize: true,
   cli: {
     entitiesDir: "src/entity",
     migrationsDir: "src/migration",
