@@ -101,7 +101,7 @@ describe("Urls test", () => {
       });
   });
 
-  it("Get with incorrect shortener", (done: Function) => {
+  it("Get incorrect shortener", (done: Function) => {
     chai
       .request(process.env.HOST)
       .get("kdhf21d")
