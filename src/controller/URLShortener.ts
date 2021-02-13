@@ -5,6 +5,10 @@ import { Url } from "../entity/URL";
 export const URLShortener = async (req: Request, res: Response) => {
   const url = req.body.url;
 
+  if (!isValidUrl(url)) {
+    return res.status(404).send("URl não válida");
+  }
+
   const checker = await urlChecker(url);
 
   var dateToday = new Date();
@@ -68,4 +72,19 @@ const urlChecker = async (fullUrl: String) => {
     return false;
   }
   return false;
+};
+
+// Não é codigo proprietario, peguei na internet e adaptei (https://www.codegrepper.com/code-examples/javascript/typescript+check+if+is+valid+url)
+const isValidUrl = (urlString: String) => {
+  var pattern = new RegExp(
+    "^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  ); // fragment locator
+
+  return !!pattern.test(`${urlString}`);
 };
