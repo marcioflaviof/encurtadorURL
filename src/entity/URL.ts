@@ -20,6 +20,6 @@ export class Url extends BaseEntity {
   @CreateDateColumn()
   createdDate: Date;
 
-  @Column({ type: "date" })
+  @Column()
   expiresDate: Date;
 }

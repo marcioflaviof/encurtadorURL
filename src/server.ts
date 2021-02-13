@@ -1,7 +1,9 @@
-import "dotenv/config";
+import dotenv from "dotenv";
 import express from "express";
 import { createConnection } from "typeorm";
 import routes from "./routes";
+
+dotenv.config();
 
 const port = 8081;
 

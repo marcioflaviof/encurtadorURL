@@ -21,7 +21,9 @@
     "typeorm": "0.2.31"
   },
   "scripts": {
-    "start": "ts-node src/server.ts",
-    "dev": "nodemon --exec ts-node src/server.ts"
+    "start": "node dist/server.js",
+    "watch": "tsc -w",
+    "dev": "nodemon dist/server.js",
+    "devtwo": "nodemon --exec ts-node src/server.ts"
   }
 }

@@ -7,7 +7,7 @@ export const URLShortener = async (req: Request, res: Response) => {
 
   const checker = await urlChecker(url);
 
-  const dateToday = new Date();
+  var dateToday = new Date();
 
   // Checa a data e caso tenha expirado deleta do banco
   if (checker) {
@@ -30,7 +30,9 @@ export const URLShortener = async (req: Request, res: Response) => {
       expiresDate,
     });
   } catch (err) {
-    return res.status(404).send("Cant insert in database");
+    return res
+      .status(404)
+      .send(`Não foi possivel inserir no banco de dados: ${err} `);
   }
 
   return res.send(
