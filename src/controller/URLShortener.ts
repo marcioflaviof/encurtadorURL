@@ -14,7 +14,7 @@ export const URLShortener = async (req: Request, res: Response) => {
     if (dateToday < checker.expiresDate) {
       return res.send(`Resgatado no banco como: ${checker.newUrl}`);
     } else if (dateToday > checker.expiresDate) {
-      Url.delete(checker);
+      await Url.delete(checker);
     }
   }
 
@@ -24,7 +24,7 @@ export const URLShortener = async (req: Request, res: Response) => {
   var expiresDate = new Date();
   expiresDate.setFullYear(expiresDate.getFullYear() + 1);
   try {
-    Url.insert({
+    await Url.insert({
       url,
       newUrl: `${process.env.HOST}${shorterURL}`,
       expiresDate,
