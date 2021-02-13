@@ -40,11 +40,10 @@ export const URLShortener = async (req: Request, res: Response) => {
 
 //Pega a URL e redireciona para a página guardada no banco de dados
 export const GetURL = async (req: Request, res: Response) => {
-  const url = await Url.findOne({
-    newUrl: `${process.env.HOST}${req.params.url}`,
-  });
-
   try {
+    const url = await Url.findOne({
+      newUrl: `${process.env.HOST}${req.params.url}`,
+    });
     res.writeHead(301, { Location: url?.url });
     res.end();
     return;
