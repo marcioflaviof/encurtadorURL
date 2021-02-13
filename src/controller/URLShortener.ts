@@ -26,7 +26,7 @@ export const URLShortener = async (req: Request, res: Response) => {
   try {
     Url.insert({
       url,
-      newUrl: `http://localhost:8081/${shorterURL}`,
+      newUrl: `${process.env.HOST}${shorterURL}`,
       expiresDate,
     });
   } catch (err) {
@@ -35,15 +35,14 @@ export const URLShortener = async (req: Request, res: Response) => {
       .send(`Não foi possivel inserir no banco de dados: ${err} `);
   }
 
-  return res.send(
-    `Inserido no banco como: http://localhost:8081/${shorterURL}`
-  );
+  return res.send(`Inserido no banco como: ${process.env.HOST}${shorterURL}`);
 };
 
 //Pega a URL e redireciona para a página guardada no banco de dados
 export const GetURL = async (req: Request, res: Response) => {
-  const localhost = "http://localhost:8081";
-  const url = await Url.findOne({ newUrl: `${localhost}/${req.params.url}` });
+  const url = await Url.findOne({
+    newUrl: `${process.env.HOST}${req.params.url}`,
+  });
 
   try {
     res.writeHead(301, { Location: url?.url });
