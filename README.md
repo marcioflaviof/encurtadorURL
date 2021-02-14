@@ -49,3 +49,8 @@
  8. Documentação do Postman -> https://documenter.getpostman.com/view/7519945/TWDRtLFi
 
  9. O servidor online no heroku -> https://encurtador-url-ts.herokuapp.com/
+ 
+ Atualmente essa é a versão que está online no heroku, contudo criei uma versão em que o backend está em container, ou seja a versão docker, que está no link abaixo
+ 
+    https://github.com/marcioflaviof/encurtadorURL-docker
+ 
