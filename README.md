@@ -4,12 +4,12 @@
 
  2. Agora instale o yarn devido a minha escolha de gerenciador de pacotes
 
-      npm install --global yarn
+        npm install --global yarn
 
       
  3. Depois rode o yarn, simplesmente digitando yarn no terminal para que assim ele baixe os pacotes necessários para o programa rodar
 
-      yarn
+        yarn
 
 
  4. Antes de iniciar o programa devemos configurar o postgres, logo neste tutorial presumirei que possue o postgres instalado:
@@ -17,9 +17,9 @@
        2. No Ubuntu 20.04 é possivel se fazer isso com "sudo su - postgres", coloque sua senha, depois no terminal digite "psql"
           e depois "CREATE DATABASE encurtador;", lembre-se do ";" é importante no postgres.
 
-            sudo su - postgres
-            psql
-            CREATE DATABASE encurtador;
+              sudo su - postgres
+              psql
+              CREATE DATABASE encurtador;
 
           
  5. Será necessário antes de inicializar criar um arquivo chamado .env, siga o exemplo do .env.example
@@ -30,16 +30,16 @@
  6. Há alguns jeitos de inicializar o programa:
       1. digitando tsc e depois node dist/server.js para assim compilar o programa e executá-lo em forma de produção (ganho de performance)
 
-            tsc
-            node dist/server.js
+             tsc
+             node dist/server.js
 
       
       2. através do yarn e nodemon em 2 terminais, um com "yarn watch" e o outro com "yarn dev" (sem as aspas) , assim um terminal irá ficar
          compilando o programa quando o mesmo for alterado e o outro executando.
 
-            yarn watch
-     
-            yarn dev
+             yarn watch
+
+             yarn dev
    
  
  7. Caso queira rodar alguns testes digite:
