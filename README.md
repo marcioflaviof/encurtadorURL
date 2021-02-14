@@ -48,4 +48,4 @@
  
  8. Documentação do Postman -> https://documenter.getpostman.com/view/7519945/TWDRtLFi
 
- 9 . O servidor online no heroku -> https://encurtador-url-ts.herokuapp.com/
+ 9. O servidor online no heroku -> https://encurtador-url-ts.herokuapp.com/
