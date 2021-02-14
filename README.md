@@ -13,8 +13,8 @@
 
 
  4. Antes de iniciar o programa devemos configurar o postgres, logo neste tutorial presumirei que possue o postgres instalado:
-       a) Primeiro crie uma database com o nome encurtador no seu postgres
-       b) No Ubuntu 20.04 é possivel se fazer isso com "sudo su - postgres", coloque sua senha, depois no terminal digite "psql"
+       1. Primeiro crie uma database com o nome encurtador no seu postgres
+       2. No Ubuntu 20.04 é possivel se fazer isso com "sudo su - postgres", coloque sua senha, depois no terminal digite "psql"
           e depois "CREATE DATABASE encurtador;", lembre-se do ";" é importante no postgres.
 
             sudo su - postgres
@@ -28,13 +28,13 @@
 
 
  6. Há alguns jeitos de inicializar o programa:
-      a) digitando tsc e depois node dist/server.js para assim compilar o programa e executá-lo em forma de produção (ganho de performance)
+      1. digitando tsc e depois node dist/server.js para assim compilar o programa e executá-lo em forma de produção (ganho de performance)
 
             tsc
             node dist/server.js
 
       
-      b) através do yarn e nodemon em 2 terminais, um com "yarn watch" e o outro com "yarn dev" (sem as aspas) , assim um terminal irá ficar
+      2. através do yarn e nodemon em 2 terminais, um com "yarn watch" e o outro com "yarn dev" (sem as aspas) , assim um terminal irá ficar
          compilando o programa quando o mesmo for alterado e o outro executando.
 
             yarn watch
